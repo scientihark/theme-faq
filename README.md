@@ -2,6 +2,8 @@
 
 Theme for using GitBook to publish an FAQ or Knowledge Base. This theme works perfectly with search plugins (as the [default one](https://github.com/GitbookIO/plugin-search) or [algolia](https://github.com/GitbookIO/plugin-algolia)).
 
+
+
 ## Usage
 
 This theme requires GitBook version 3 or later.
