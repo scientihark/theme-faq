@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-plugin-theme-faq",
+  "name": "gitbook-plugin-theme-helpcenter",
   "description": "Theme for using GitBook as a FAQ or Knowledge base",
   "version": "1.2.1",
   "engines": {
