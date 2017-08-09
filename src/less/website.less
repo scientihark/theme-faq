@@ -1,18 +1,49 @@
 @import "../../node_modules/gitbook-markdown-css/less/mixin.less";
 
-@import "./variables.less";
-@import "./panel.less";
-@import "./search.less";
+// @import "./variables.less";
+// @import "./panel.less";
+// @import "./search.less";
+@import './reset.less';
+@import './footer.less';
+@import './topBar.less';
+@import './main.less';
 
-@header-background: #f8f8f8;
-@header-border: #e7e7e7;
-
-.faq-navbar {
-    margin: 50px;
-    border: 0px;
+.topShadow{
+	box-shadow: 0 -5px 15px 0 rgba(0,1,2,0.1);
+}
+.bg{
+	background-image: linear-gradient(-180deg, #FFFFFF 53%, #FAFBFC 98%);
+}
+.content{
+  width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.faq-header {
+	//列表
+.listContainer{
+	.listItem{
+		text-align: left;
+		padding: 20px;
+		margin: 10px 0;
+		&:hover{
+			border: 1px solid gray;
+			border-radius: 5px;
+		}
+		.listItemTitle{
+			color: black;
+			font-size: 16px;
+			line-height: 22px;
+		}
+		.listItemDes{
+			color: gray;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+}
+
+.main {
   .supportHeader{
 		height: 400px;
 		background-color: #33b1ff;
@@ -52,72 +83,89 @@
 			}
 		}
 	}
-    // padding: 50px 0px;
-    // padding-bottom: 80px;
-    //
-    // text-align: center;
-    // background-color: @header-background;
-    // border-bottom: 1px solid @header-border;
-    // margin: 0px;
-    // margin-bottom: 30px;
-
-    h1 {
-        border: 0px;
-    }
-
-    .description {
-        color: #777;
-        text-align: justify;
-        line-height: 1.8em;
-
-        // Align with faq-page-container
-        max-width: @faq-page-container-width;
-        margin: 0px auto;
-        padding-left: @faq-page-padding;
-        padding-right: @faq-page-padding;
-        padding-top: 40px;
-    }
-}
-
-.faq-page-container {
-    width: 100%;
-    max-width: @faq-page-container-width;
-    margin: 0px auto;
-    margin-top: -60px;
-    padding: 0px @faq-page-padding;
-    margin-bottom: 30px;
-}
-
-.faq-page {
-    font-size: 15px;
-    line-height: 1.6;
-
-    .gitbook-markdown();
-}
-
-.faq-page-footer {
-    padding: 0px 10px;
-    margin-bottom: 20px;
-    text-align: right;
-    color: #999;
-
-    a, span {
-        color: inherit;
-    }
-}
-
-@media (max-width: @faq-page-container-width) {
-    .faq-header .description {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .faq-page-container {
-        padding: 20px 0px;
-
-        > .panel {
-            border-right: 0px;
-            border-left: 0px;
-        }
-    }
+	.supportNav{
+		height: 270px;
+		background-image: linear-gradient(to bottom, #ffffff, #fafcfd);
+		.supportNavCon{
+			height: 124px;
+			padding: 73px 0;
+			width: 1142px;
+			margin: 0 auto;
+			.navItem{
+				width: 380px;
+				height: 100%;
+				float: left;
+				text-align: center;
+				p{
+					margin: 0;
+					&:nth-child(1){
+						height: 60px;
+						width: 60px;
+						margin-bottom: 33px;
+						display: inline-block;
+						line-height: 60px;
+					}
+					&:nth-child(2){
+						font-size: 18px;
+						color: #6bd23d;
+					}
+				}
+			}
+			.navItemLine{
+				width: 1px;
+				height: 124px;
+				background-color: #f2f2f2;
+				float: left;
+			}
+		}
+	}
+	.searchList{
+		border-bottom: 1px solid black;
+		.content{
+			width: 650px;
+			.searchListTitle{
+				font-size: 16px;
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+	}
+	.normalQuestion{
+		.content{
+			width: 650px;
+			.normalQuestionTitle{
+				font-size: 30px;
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+	}
+	.submitOrder{
+		height: 360px;
+		background-color: #fafafa;
+		box-shadow: 0 -5px 15px 0 rgba(0, 1, 2, 0.03);
+		.content{
+			height: 100%;
+			overflow: hidden;
+			.orderTitle{
+				font-size: 38px;
+				font-weight: 300;
+				color: #000000;
+				margin: 85px 0 20px;
+			}
+			.orderSubTitle{
+				span{
+					font-size: 16px;
+					color: #000000;
+					&:nth-child(2){
+						color: #33b0ff;
+					}
+				}
+				margin-bottom: 46px;
+			}
+			.button{
+				width: 200px;
+			}
+		}
+	}
 }
