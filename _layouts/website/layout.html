@@ -171,7 +171,7 @@
     gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
 
 })();
-if(document.readyState == “complete”) //当页面加载状态
+if(document.readyState == 'complete') //当页面加载状态
   document.querySelector('#book-search-input input').placeholder = '搜索你想要了解的问题';
   document.querySelector('#book-search-input input').addEventListener('input',function(){
     console.log(1);
