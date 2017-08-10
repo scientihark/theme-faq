@@ -37,7 +37,23 @@
       <div class="searchTitle">我们能帮上什么忙吗？</div>
       <div class="searchCon">
         <span class="searchIcon">Icon</span>
-        <input type="text" placeholder="请输入你想要了解的问题" class="searchInput"></input>
+        <input type="text" placeholder="请输入你想要了解的问题" class="searchInput">
+        {% block faq_header_title %}
+            {% if file.path == readme.file.path %}
+                {{ config.title|d("DEFAULT_TITLE"|t, true) }}
+            {% else %}
+                {{ page.title }}
+            {% endif %}
+        {% endblock %}
+        </input>
+        {% block search_input %}{% endblock %}
+
+        {% if file.path == readme.file.path %}
+        <div class="description">
+            {{ page.content | safe }}
+        </div>
+        {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -63,38 +79,18 @@
     <div class="content">
       <div class="searchListTitle">搜索结果</div>
       <div class="listContainer">
-        <div class="listItem">
-          <div class="listItemTitle">是否提供更大套餐</div>
-          <div class="listItemDes">这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，</div>
-        </div>
-        <div class="listItem">
-          <div class="listItemTitle">是否提供更大套餐</div>
-          <div class="listItemDes">这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，</div>
-        </div>
-        <div class="listItem">
-          <div class="listItemTitle">是否提供更大套餐</div>
-          <div class="listItemDes">这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，</div>
-        </div>
+        {% block search_results %}
+            {% block page %}{% endblock %}
+
+            {% block faq_footer %}
+            <div class="faq-page-footer">
+                <a href="https://www.gitbook.com" target="_blank">{{ "GITBOOK_LINK"|t }}</a> ·
+                <span>Last edit {{ file.mtime|date('MMMM Do YYYY') }}</span>
+            </div>
+            {% endblock %}
+        {% endblock %}
       </div>
-    </div>
-  </div>
-  <div class="normalQuestion">
-    <div class="content">
-      <div class="normalQuestionTitle">常见问题</div>
-      <div class="listContainer">
-        <div class="listItem">
-          <div class="listItemTitle">是否提供更大套餐</div>
-          <div class="listItemDes">这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，</div>
-        </div>
-        <div class="listItem">
-          <div class="listItemTitle">是否提供更大套餐</div>
-          <div class="listItemDes">这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，</div>
-        </div>
-        <div class="listItem">
-          <div class="listItemTitle">是否提供更大套餐</div>
-          <div class="listItemDes">这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，这是一段回答，</div>
-        </div>
-      </div>
+      {% endblock %}
     </div>
   </div>
   <div class="submitOrder">
