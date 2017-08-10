@@ -37,15 +37,7 @@
       <div class="searchTitle">我们能帮上什么忙吗？</div>
       <div class="searchCon">
         <span class="searchIcon">Icon</span>
-        <h1  class="searchInput">
-        {% block faq_header_title %}
-            {% if file.path == readme.file.path %}
-                {{ config.title|d("DEFAULT_TITLE"|t, true) }}
-            {% else %}
-                {{ page.title }}
-            {% endif %}
-        {% endblock %}
-      </h1>
+
         {% block search_input %}{% endblock %}
 
         {% if file.path == readme.file.path %}
