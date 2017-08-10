@@ -72,14 +72,7 @@
       <div class="searchListTitle">搜索结果</div>
       <div class="listContainer">
         {% block search_results %}
-            {% block page %}{% endblock %}
-
-            {% block faq_footer %}
-            <div class="faq-page-footer">
-                <a href="https://www.gitbook.com" target="_blank">{{ "GITBOOK_LINK"|t }}</a> ·
-                <span>Last edit {{ file.mtime|date('MMMM Do YYYY') }}</span>
-            </div>
-            {% endblock %}
+          {% block page %}{% endblock %}
         {% endblock %}
       </div>
     </div>

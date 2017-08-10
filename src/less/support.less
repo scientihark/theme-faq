@@ -1,9 +1,6 @@
 @import './reset.less';
 @import './footer.less';
 @import './main.less';
-@import './panel.less';
-@import './variables.less';
-@import './search.less';
 
 .topShadow{
 	box-shadow: 0 -5px 15px 0 rgba(0,1,2,0.1);
@@ -17,155 +14,211 @@
   text-align: center;
 }
 
-	//列表
-.listContainer{
-	.listItem{
-		text-align: left;
-		margin-bottom: 36px;
-		&:last-child{
-			margin: 0;
+
+.supportHeader{
+	height: 400px;
+	background-color: #33b1ff;
+	.content{
+		height: 100%;
+		overflow: hidden;
+		.searchTitle{
+			font-size: 38px;
+			font-weight: 300;
+			line-height: 1.05;
+			color: #ffffff;
+			margin: 112px 0 48px;
 		}
-		.listItemTitle{
-			font-size: 18px;
-			color: #333333;
-			line-height: 25px;
-			margin-bottom: 14px;
-		}
-		.listItemDes{
-			font-size: 14px;
-			line-height: 1.71;
-			color: #999999;
+		.searchCon{
+			display: inline-block;
+			width: 857px;
+			height: 71px;
+			border-radius: 5px;
+			background-color: #ffffff;
+			box-shadow: inset 0 -1px 0 0 #dbdbdb;
+			text-align: left;
+			span{
+				display: inline-block;
+				height: 24px;
+				width: 24px;
+				line-height: 24px;
+				margin: 23px 16px 24px 19px;;
+			}
+			#book-search-input {
+				width: 790px;
+				font-size: 18px;
+				color: #bebebe;
+				outline: 0;
+				border: 0;
+				margin: 23px 0;
+			}
 		}
 	}
 }
-
-.main {
-  .supportHeader{
-		height: 400px;
-		background-color: #33b1ff;
-		.content{
-			height: 100%;
-			overflow: hidden;
-			.searchTitle{
-				font-size: 38px;
-				font-weight: 300;
-				line-height: 1.05;
-				color: #ffffff;
-				margin: 112px 0 48px;
-			}
-			.searchCon{
-				display: inline-block;
-				width: 857px;
-				height: 71px;
-				border-radius: 5px;
-				background-color: #ffffff;
-				box-shadow: inset 0 -1px 0 0 #dbdbdb;
-				text-align: left;
-				span{
+.supportNav{
+	height: 270px;
+	background-image: linear-gradient(to bottom, #ffffff, #fafcfd);
+	.supportNavCon{
+		height: 124px;
+		padding: 73px 0;
+		width: 1142px;
+		margin: 0 auto;
+		.navItem{
+			width: 380px;
+			float: left;
+			text-align: center;
+			p{
+				margin: 0;
+				&:nth-child(1){
+					height: 60px;
+					width: 60px;
+					margin-bottom: 33px;
 					display: inline-block;
-					height: 24px;
-					width: 24px;
-					line-height: 24px;
-					margin: 23px 16px 24px 19px;;
+					line-height: 60px;
 				}
-				input {
-					width: 790px;
+				&:nth-child(2){
 					font-size: 18px;
-					color: #bebebe;
-					outline: 0;
-					border: 0;
-					margin: 23px 0;
+					color: #6bd23d;
 				}
 			}
 		}
-	}
-	.supportNav{
-		height: 270px;
-		background-image: linear-gradient(to bottom, #ffffff, #fafcfd);
-		.supportNavCon{
+		.navItemLine{
+			width: 1px;
 			height: 124px;
-			padding: 73px 0;
-			width: 1142px;
-			margin: 0 auto;
-			.navItem{
-				width: 380px;
-				float: left;
-				text-align: center;
-				p{
+			background-color: #f2f2f2;
+			float: left;
+		}
+	}
+}
+.searchList{
+	margin-bottom: 129px;
+	.content{
+		width: 572px;
+		.searchListTitle{
+			font-size: 38px;
+			font-weight: 300;
+			line-height: 1.05;
+			color: #000000;
+			margin: 110px 0 50px;
+		}
+		.listContainer{
+			.search-plus{
+				.search-noresults{
+					.pannel {
+						//列表box
+						.panel-heading{
+							//总共多少文章
+							display: none;
+						}
+						.list-group{
+							//文章列表
+							a{
+								text-align: left;
+								margin-bottom: 36px;
+								i{
+									//小图标
+								}
+								&:last-child{
+									margin: 0;
+								}
+							}
+						}
+					}
+					.faq-page-footer{
+						//本书由gitbook
+						display: none;
+					}
+				}
+				.search-results{
+					.has-results{
+						.search-results-title{
+							//多少条结果
+							display: none;
+						}
+						.search-results-list{
+							.search-results-item{
+								h3{
+									//mdtitle
+									a{
+
+									}
+								}
+								p{
+									//md content
+									text-align: left;
+								}
+							}
+						}
+					}
+					.no-results{
+						.search-results-title{
+							//No results matching ==
+							margin: 0;
+							span{
+								//失败关键字
+							}
+						}
+					}
+				}
+			}
+			.listItem{
+				text-align: left;
+				margin-bottom: 36px;
+				&:last-child{
 					margin: 0;
-					&:nth-child(1){
-						height: 60px;
-						width: 60px;
-						margin-bottom: 33px;
-						display: inline-block;
-						line-height: 60px;
-					}
-					&:nth-child(2){
-						font-size: 18px;
-						color: #6bd23d;
-					}
+				}
+				.listItemTitle{
+					font-size: 18px;
+					color: #333333;
+					line-height: 25px;
+					margin-bottom: 14px;
+				}
+				.listItemDes{
+					font-size: 14px;
+					line-height: 1.71;
+					color: #999999;
 				}
 			}
-			.navItemLine{
-				width: 1px;
-				height: 124px;
-				background-color: #f2f2f2;
-				float: left;
-			}
 		}
 	}
-	.searchList{
-		margin-bottom: 129px;
-		.content{
-			width: 572px;
-			.searchListTitle{
-				font-size: 38px;
-				font-weight: 300;
-				line-height: 1.05;
-				color: #000000;
-				margin: 110px 0 50px;
-			}
+}
+.normalQuestion{
+	margin-bottom: 129px;
+	.content{
+		width: 572px;
+		.normalQuestionTitle{
+			font-size: 38px;
+			font-weight: 300;
+			line-height: 1.05;
+			color: #000000;
+			margin-top: 110px 0 50px;
 		}
 	}
-	.normalQuestion{
-		margin-bottom: 129px;
-		.content{
-			width: 572px;
-			.normalQuestionTitle{
-				font-size: 38px;
-				font-weight: 300;
-				line-height: 1.05;
-				color: #000000;
-				margin-top: 110px 0 50px;
-			}
+}
+.submitOrder{
+	height: 360px;
+	background-color: #fafafa;
+	box-shadow: 0 -5px 15px 0 rgba(0, 1, 2, 0.03);
+	.content{
+		height: 100%;
+		overflow: hidden;
+		.orderTitle{
+			font-size: 38px;
+			font-weight: 300;
+			color: #000000;
+			margin: 85px 0 20px;
 		}
-	}
-	.submitOrder{
-		height: 360px;
-		background-color: #fafafa;
-		box-shadow: 0 -5px 15px 0 rgba(0, 1, 2, 0.03);
-		.content{
-			height: 100%;
-			overflow: hidden;
-			.orderTitle{
-				font-size: 38px;
-				font-weight: 300;
+		.orderSubTitle{
+			span{
+				font-size: 16px;
 				color: #000000;
-				margin: 85px 0 20px;
-			}
-			.orderSubTitle{
-				span{
-					font-size: 16px;
-					color: #000000;
-					&:nth-child(2){
-						color: #33b0ff;
-					}
+				&:nth-child(2){
+					color: #33b0ff;
 				}
-				margin-bottom: 46px;
 			}
-			.button{
-				width: 200px;
-			}
+			margin-bottom: 46px;
+		}
+		.button{
+			width: 200px;
 		}
 	}
 }
