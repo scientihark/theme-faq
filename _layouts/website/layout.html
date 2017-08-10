@@ -32,41 +32,52 @@
 
 {% block body %}
 <div class='main'>
-  <div class="supportHeader">
-    <div class="content">
-      <div class="searchTitle">我们能帮上什么忙吗？</div>
-      <div class="searchCon">
-        <span class="searchIcon">Icon</span>
+  {% if file.path == readme.file.path %}
+    <div class="supportHeader">
+      <div class="content">
+        <div class="searchTitle">我们能帮上什么忙吗？</div>
+        <div class="searchCon">
+          <span class="searchIcon">Icon</span>
 
-        {% block search_input %}{% endblock %}
+          {% block search_input %}{% endblock %}
 
-        {% if file.path == readme.file.path %}
-        <div class="description">
-            {{ page.content | safe }}
-        </div>
-        {% endif %}
+          {% if file.path == readme.file.path %}
+          <div class="description">
+              {{ page.content | safe }}
+          </div>
+          {% endif %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="supportNav">
-    <div class="supportNavCon">
-      <div class="navItem">
-        <p>Icon</p>
-        <p>联系客服</p>
-      </div>
-      <div class="navItemLine"></div>
-      <div class="navItem">
-        <p>Icon</p>
-        <p>产品文档</p>
-      </div>
-      <div class="navItemLine"></div>
-      <div class="navItem">
-        <p>Icon</p>
-        <p>造数社区</p>
+    <div class="supportNav">
+      <div class="supportNavCon">
+        <div class="navItem">
+          <p>Icon</p>
+          <p>联系客服</p>
+        </div>
+        <div class="navItemLine"></div>
+        <div class="navItem">
+          <p>Icon</p>
+          <p>产品文档</p>
+        </div>
+        <div class="navItemLine"></div>
+        <div class="navItem">
+          <p>Icon</p>
+          <p>造数社区</p>
+        </div>
       </div>
     </div>
-  </div>
+  {% else %}
+    <div class="supportDetailHeader">
+      <div class="content">
+        <span>帮助中心</span>
+        <span>
+          {% block page %}{{ page.title }}{% endblock %}
+        </span>
+      </div>
+    </div>
+  {% endif %}
   <div class="searchList">
     <div class="content">
       <div class="searchListTitle">搜索结果</div>

@@ -1,11 +1,7 @@
 {% extends "website/layout.html" %}
 
 {% block title %}
-    {% if file.path == readme.file.path %}
-        {{ config.title|d("DEFAULT_TITLE"|t, true) }}
-    {% else %}
-        {{ page.title }} · {{ super() }}
-    {% endif %}
+    
 {% endblock %}
 {% block description %}{{ page.description }}{% endblock %}
 
