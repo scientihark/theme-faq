@@ -157,7 +157,8 @@
 {% endfor %}
 <script>
 (function() {
-    gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }})
+    gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+    document.querySelector('#book-search-input input').placeholder = '搜索你想要了解的问题';
 })();
 </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
