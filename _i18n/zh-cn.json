@@ -3,7 +3,7 @@
     "FAQ_RELATED_ARTICLES": "Related Articles",
     "FAQ_TITLE": "FAQ",
     "GITBOOK_LINK": "Published with GitBook",
-    "SEARCH_PLACEHOLDER": "Have a question? Ask or enter a search term here.",
+    "SEARCH_PLACEHOLDER": "搜索你想要了解的问题",
     "SEARCH_RESULTS_TITLE": "<span class='search-results-count'></span> results for \"<span class='search-query'></span>\"",
     "SEARCH_NO_RESULTS_TITLE": "没有找到与 \"<span class='search-query'></span>\"相关的内容"
 }
