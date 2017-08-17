@@ -5,7 +5,7 @@
     position: relative;
     font-size: 0;
     height: 400px;
-    box-shadow: 0 -5px 15px 0 rgba(0,1,2,0.03);
+    // box-shadow: 0 -5px 15px 0 rgba(0,1,2,0.03);
     .content {
 	    width: 980px;
 	    margin: 0 auto;
@@ -28,6 +28,11 @@
 			    width: 150px;
 			    display: inline-block;
           float: left;
+          &:last-child{
+            a{
+              cursor: default;
+            }
+          }
 			    .title {
     				font-size: 24px;
 				}
