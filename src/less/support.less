@@ -68,6 +68,7 @@
 			width: 380px;
 			float: left;
 			text-align: center;
+			text-decoration: none;
 			&:nth-child(1){
 				color: #33b1ff;
 			}
@@ -89,8 +90,9 @@
 					line-height: 60px;
 				}
 			}
-			a{
+			span{
 				display: block;
+				font-size: 18px;
 			}
 		}
 		.navItemLine{
@@ -199,10 +201,10 @@
 					}
 					.no-results{
 						width: 960px;
-						height: 320px;
 						border-radius: 4px;
 						background-color: #ffffff;
 						padding: 137px 0;
+						text-align: center;
 						box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.24);
 						.search-results-title{
 							//No results matching ==
@@ -280,12 +282,16 @@
 }
 .supportDetailHeader{
 	height: 90px;
-  background-color: #33b1ff;
+  	background-color: #33b1ff;
 	.content{
 		text-align: left;
 		line-height: 90px;
 		font-size: 16px;
 		font-weight: 300;
-		color: #ffffff;
+		color: #fff !important;
+		a{
+			text-decoration: none;
+
+		}
 	}
 }
