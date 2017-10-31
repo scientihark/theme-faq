@@ -12,12 +12,10 @@
 
 {% block style %}
     <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
-        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="{{ "style.css"|resolveAsset }}">
     {{ super() }}
@@ -33,7 +31,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">zhan kai dao ha</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -42,7 +40,7 @@
                 {% block faq_header_brand %}{{ config.title|d("Help Center", true) }}{% endblock %}
             </a>
         </div>
-
+        <a href="https://help.zaoshu.io/hc/zh-cn/requests/new" class="goZendesk">提交工单</a>
         <div class="collapse navbar-collapse" id="navbar-menu">
             {% block faq_menu %}{% endblock %}
         </div>
@@ -77,8 +75,8 @@
 
     {% block faq_footer %}
     <div class="faq-page-footer">
-        <a href="https://www.gitbook.com" target="_blank">{{ "GITBOOK_LINK"|t }}</a> ·
-        <span>Last edit {{ file.mtime|date('MMMM Do YYYY') }}</span>
+        <a href="https://www.zaoshu.io" target="_blank">{{ "GITBOOK_LINK"|t }}</a>
+        <a href="https://help.zaoshu.io/hc/zh-cn/requests/new">提交工单</a>
     </div>
     {% endblock %}
 {% endblock %}
@@ -100,5 +98,5 @@
     gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }})
 })();
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
 {% endblock %}
