@@ -1,0 +1,9 @@
+{
+    "DEFAULT_TITLE": "Help Center",
+    "FAQ_RELATED_ARTICLES": "Related Articles",
+    "FAQ_TITLE": "FAQ",
+    "GITBOOK_LINK": "Published with GitBook",
+    "SEARCH_PLACEHOLDER": "搜索你想要了解的问题",
+    "SEARCH_RESULTS_TITLE": "找到<span class='search-results-count'></span>条与\"<span class='search-query'></span>\"相关的内容",
+    "SEARCH_NO_RESULTS_TITLE": "没有找到与 \"<span class='search-query'></span>\"相关的内容"
+}

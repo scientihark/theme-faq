@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.footer {
+    background: #fff;
+    position: relative;
+    font-size: 0;
+    height: 400px;
+    // box-shadow: 0 -5px 15px 0 rgba(0,1,2,0.03);
+    .content {
+	    width: 980px;
+	    margin: 0 auto;
+	    z-index: 1000;
+	    text-align: left;
+	    padding: 70px 0 40px 0;
+
+		.menus {
+		    display: inline-block;
+		    vertical-align: top;
+		    height: 270px;
+		    .menu {
+			    width: 192px;
+			    display: inline-block;
+          float: left;
+          &:last-child{
+            width: 212px;
+            .links{
+              font-size: 20px;
+            	line-height: 1.9;
+            	color: #666666;
+            }
+            a{
+              cursor: default;
+            }
+          }
+			    .title {
+            font-size: 16px;
+          	line-height: 1.88;
+          	color: #666666;
+          }
+				.links {
+          font-size: 14px;
+          line-height: 2.0;
+          color: #999999;
+			    margin-top: 20px;
+			    a {
+				    display: block;
+				    color: #757575;
+				    text-decoration: none;
+				  }
+				}
+			}
+		}
+		.contact {
+		    display: inline-block;
+		    vertical-align: top;
+		    width: 150px;
+		    font-size: 16px;
+		}
+		.copyRight {
+		    font-size: 14px;
+		    float: left;
+		    color: #dadada;
+		}
+		.ICP {
+		    font-size: 14px;
+		    float: right;
+		    color: #dadada;
+		    position: relative;
+    		top: 20px;
+		}
+	}
+
+}

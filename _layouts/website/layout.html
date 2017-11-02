@@ -2,22 +2,22 @@
 
 {% block head %}
     {{ super() }}
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ "images/apple-touch-icon-precomposed-152.png"|resolveAsset }}">
-    <link rel="shortcut icon" href="{{ "images/favicon.ico"|resolveAsset }}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>造数 - 新一代智能云爬虫</title>
+    <meta name="Keywords" content="造数,造数科技,爬虫工具,云爬虫,爬虫,采集,网页采集">
+    <link rel="shortcut icon" href="http://zaoshu.io/asserts/favicon.ico">
+    <link rel="icon" type="images/png" sizes="16*16" href="http://zaoshu.io/asserts/Icon_16x16.png">
+    <link rel="icon" type="images/png" sizes="32*32" href="http://zaoshu.io/asserts/Icon_32x32.png">
+    <link rel="icon" type="images/png" sizes="64*64" href="http://zaoshu.io/asserts/Icon_64x64.png">
+    <link rel="icon" type="images/png" sizes="96*96" href="http://zaoshu.io/asserts/Icon_96x96.png">
 {% endblock %}
 
 {% block style %}
     <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
-        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="{{ "style.css"|resolveAsset }}">
     {{ super() }}
@@ -29,59 +29,80 @@
 {% endblock %}
 
 {% block body %}
-<nav class="faq-navbar navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ basePath }}">
-                {% block faq_header_brand %}{{ config.title|d("Help Center", true) }}{% endblock %}
-            </a>
-        </div>
+<div class='main'>
+  {% if file.path == readme.file.path %}
+    <div class="supportHeader">
+      <div class="content">
+        <div class="searchTitle">我们能帮上什么忙吗？</div>
+        <div class="searchCon">
+          <span class="searchIcon"><img src="http://zaoshu.io/asserts/search.png" alt=""></span>
 
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            {% block faq_menu %}{% endblock %}
+          {% block search_input %}{% endblock %}
+
+          {% if file.path == readme.file.path %}
+          <div class="description">
+              {{ page.content | safe }}
+          </div>
+          {% endif %}
+          </div>
         </div>
+      </div>
     </div>
-</nav>
-
-<div class="faq-header">
-    <div class="container">
-    <h1>
-        {% block faq_header_title %}
-            {% if file.path == readme.file.path %}
-                {{ config.title|d("DEFAULT_TITLE"|t, true) }}
-            {% else %}
-                {{ page.title }}
-            {% endif %}
+    <div class="supportNav">
+      <div class="supportNavCon">
+        <div class="navItem">
+          <p>
+            <img src="http://zaoshu.io/asserts/nav-1.png" alt="">
+          </p>
+          <a target="_blank" href="tel:15652066699">156-5206-6699</a>
+        </div>
+        <div class="navItemLine"></div>
+        <div class="navItem">
+          <p>
+            <img src="http://zaoshu.io/asserts/nav-2.png" alt="">
+          </p>
+          <a target="_blank"  href="https://changelog.zaoshu.io/">产品文档</a>
+        </div>
+        <div class="navItemLine"></div>
+        <div class="navItem">
+          <p>
+            <img src="http://zaoshu.io/asserts/rectangle-2.png" alt="">
+          </p>
+          <a target="_blank"  href="https://forum.zaoshu.io/">造数社区</a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="supportDetailHeader">
+      <div class="content">
+        <a href='/'>帮助中心 > </a>
+        <span>
+          {{ page.title }}
+        </span>
+      </div>
+    </div>
+  {% endif %}
+  <div class="searchList">
+    <div class="content">
+      <div class="searchListTitle">FAQ</div>
+      <div class="listContainer">
+        {% block search_results %}
+          {% block page %}{% endblock %}
         {% endblock %}
-    </h1>
-
-    {% block search_input %}{% endblock %}
-
-    {% if file.path == readme.file.path %}
-    <div class="description">
-        {{ page.content | safe }}
+      </div>
     </div>
-    {% endif %}
+  </div>
+  <div class="submitOrder">
+    <div class="content">
+      <div class="orderTitle">问题仍未解决？</div>
+      <div class="orderSubTitle">
+        <span>通过</span>
+        <a target="_blank"  href="https://help.zaoshu.io/hc/zh-cn/requests/new">提交工单</a>
+        <span>，我们技术支持团队会为你提供帮助</span>
+      </div>
+      <a target="_blank"  href="https://help.zaoshu.io/hc/zh-cn/requests/new" class="button">提交工单</a>
     </div>
-</div>
-
-<div class="faq-page-container">
-{% block search_results %}
-    {% block page %}{% endblock %}
-
-    {% block faq_footer %}
-    <div class="faq-page-footer">
-        <a href="https://www.gitbook.com" target="_blank">{{ "GITBOOK_LINK"|t }}</a> ·
-        <span>Last edit {{ file.mtime|date('MMMM Do YYYY') }}</span>
-    </div>
-    {% endblock %}
-{% endblock %}
+  </div>
 </div>
 {% endblock %}
 
@@ -97,8 +118,13 @@
 {% endfor %}
 <script>
 (function() {
-    gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }})
+    gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+
 })();
+if(document.readyState == 'complete') {//当页面加载状态
+  document.querySelector('#book-search-input input').placeholder = '搜索你想要了解的问题';
+
+}
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
 {% endblock %}

@@ -1,7 +1,7 @@
 {
-  "name": "gitbook-plugin-theme-faq",
+  "name": "gitbook-plugin-theme-helpcenter",
   "description": "Theme for using GitBook as a FAQ or Knowledge base",
-  "version": "1.2.1",
+  "version": "1.2.53",
   "engines": {
     "gitbook": ">=3.0.0-pre.10"
   },
@@ -15,17 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GitbookIO/theme-faq.git"
+    "url": "https://github.com/scientihark/zaoshu-gitbook-style-faq.git"
   },
-  "author": "FriendCode Inc. <contact@gitbook.com>",
+  "author": "zaoshu.io <scientihark@zaoshu.io>",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/GitbookIO/theme-faq/issues"
-  },
   "contributors": [
     {
-      "name": "Samy Pessé",
-      "email": "samy@gitbook.com"
+      "name": "scientihark",
+      "email": "scientihark@zaoshu.io"
     }
   ]
 }
